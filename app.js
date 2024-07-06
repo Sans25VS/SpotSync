@@ -8,7 +8,8 @@ const server = http.createServer(app);
 
 // Initialize Socket.io with the server
 const io = socketio(server);
-
+app.set("view engine", "ejs");
+app.set(express.static(path.join(__dirname,"public")));
 app.get('/', function (req, res) {
     res.send("Hello");
 });
